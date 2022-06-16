@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, file_names, camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, unused_element, unused_import
 // ignore: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:travel/FrontEnd/Destination.dart';
+import 'package:travel/FrontEnd/DestinationDesign.dart';
+import 'package:travel/FrontEnd/HotelDesign.dart';
 import 'package:travel/Widgets/bigtext.dart';
 import 'package:travel/Widgets/smallText.dart';
 
@@ -74,7 +75,11 @@ class _homeScreenState extends State<homeScreen> {
               height: 20,
             ),
             // <--------------------
-            Destination(),
+            DestinationDesign(),
+            SizedBox(
+              height: 20,
+            ),
+            HotelDesign(),
           ],
         ),
       ),

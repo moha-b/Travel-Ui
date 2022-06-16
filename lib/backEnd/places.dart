@@ -16,37 +16,37 @@ class places {
 
 List<places> destinations = [
   places(
-    imageUrl: 'images/new york.jpg',
+    imageUrl: 'images/destinations/new york.jpg',
     city: 'new york',
     country: 'America',
     description: 'Visit new york for an amazing and unforgettable adventure.',
   ),
   places(
-    imageUrl: 'images/paris.jpg',
+    imageUrl: 'images/destinations/paris.jpg',
     city: 'Paris',
     country: 'France',
     description: 'Visit Paris for an amazing and unforgettable adventure.',
   ),
   places(
-    imageUrl: 'images/italy.jpg',
+    imageUrl: 'images/destinations/italy.jpg',
     city: 'milan',
     country: 'italy',
     description: 'Visit milan for an amazing and unforgettable adventure.',
   ),
   places(
-    imageUrl: 'images/egypt.jpg',
+    imageUrl: 'images/destinations/egypt.jpg',
     city: 'cairo',
     country: 'egypt',
     description: 'Visit egypt for an amazing and unforgettable adventure.',
   ),
   places(
-    imageUrl: 'images/japan.jpg',
+    imageUrl: 'images/destinations/japan.jpg',
     city: 'tokyo',
     country: 'japan',
     description: 'Visit tokyo for an amazing and unforgettable adventure.',
   ),
   places(
-    imageUrl: 'images/spain.jpg',
+    imageUrl: 'images/destinations/spain.jpg',
     city: 'madrid',
     country: 'spain',
     description: 'Visit madrid for an amazing and unforgettable adventure.',

@@ -1,12 +1,13 @@
-// ignore_for_file: file_names, prefer_const_constructors, unnecessary_new, unused_local_variable, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
+// ignore_for_file: file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:travel/Widgets/bigtext.dart';
 import 'package:travel/Widgets/smallText.dart';
+import 'package:travel/backEnd/Hotel.dart';
 import 'package:travel/backEnd/places.dart';
 
-class Destination extends StatelessWidget {
-  const Destination({Key? key}) : super(key: key);
+class HotelDesign extends StatelessWidget {
+  const HotelDesign({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class Destination extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              BigText(text: "Top Destination"),
+              BigText(text: "Exclusive Hotels"),
               GestureDetector(
                 onTap: () => print("see All"),
                 child: SmallText(
@@ -36,17 +37,17 @@ class Destination extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: destinations.length,
               itemBuilder: (context, int index) {
-                places dest = destinations[index];
+                Hotel hotel = hotels[index];
                 return Container(
                   margin: EdgeInsets.all(10),
-                  width: 210,
+                  width: 240,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: [
                       Positioned(
                         bottom: 15,
                         child: Container(
-                          width: 200,
+                          width: 240,
                           height: 120,
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -55,12 +56,21 @@ class Destination extends StatelessWidget {
                             padding: EdgeInsets.all(10.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                BigText(text: "3 Activities"),
+                                BigText(text: hotel.name),
+                                SizedBox(
+                                  height: 3,
+                                ),
                                 SmallText(
-                                  text: dest.description,
+                                  text: hotel.address,
                                   color: Colors.grey,
+                                ),
+                                SizedBox(
+                                  height: 3,
+                                ),
+                                BigText(
+                                  text: "\$${hotel.price} / night",
+                                  size: 16,
                                 )
                               ],
                             ),
@@ -77,40 +87,13 @@ class Destination extends StatelessWidget {
                                   color: Colors.black,
                                   offset: Offset(0, 2))
                             ]),
-                        child: Stack(
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image(
-                                  width: 180,
-                                  height: 180,
-                                  fit: BoxFit.cover,
-                                  image: AssetImage(dest.imageUrl)),
-                            ),
-                            Positioned(
-                              bottom: 15,
-                              left: 10,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  BigText(text: dest.city, color: Colors.white),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.location_on_rounded,
-                                        color: Colors.white,
-                                        size: 17,
-                                      ),
-                                      SmallText(
-                                        text: dest.country,
-                                        color: Colors.white,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image(
+                              width: 220,
+                              height: 180,
+                              fit: BoxFit.cover,
+                              image: AssetImage(hotel.imageUrl)),
                         ),
                       )
                     ],
