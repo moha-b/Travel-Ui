@@ -16,6 +16,7 @@ class homeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<homeScreen> {
   int _selectedIndex = 0;
+  int _currentTab = 0;
 
   List<IconData> _icon = [
     Icons.place_outlined,
@@ -82,6 +83,26 @@ class _homeScreenState extends State<homeScreen> {
             HotelDesign(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentTab,
+        onTap: (value) {
+          setState(() {
+            _currentTab = value;
+            print(value);
+            print(_currentTab);
+          });
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.search_outlined), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.airplay_rounded), label: ""),
+          BottomNavigationBarItem(
+              icon: CircleAvatar(
+                backgroundImage: AssetImage("images/hab.jpg"),
+                radius: 15,
+              ),
+              label: ""),
+        ],
       ),
     );
   }
