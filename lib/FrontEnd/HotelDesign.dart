@@ -40,18 +40,18 @@ class HotelDesign extends StatelessWidget {
                 Hotel hotel = hotels[index];
                 return Container(
                   margin: EdgeInsets.all(10),
-                  width: 240,
+                  width: 390,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: [
                       Positioned(
                         bottom: 15,
                         child: Container(
-                          width: 240,
+                          width: 370,
                           height: 120,
                           decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10)),
+                              color: Colors.white70,
+                              borderRadius: BorderRadius.circular(20)),
                           child: Padding(
                             padding: EdgeInsets.all(10.0),
                             child: Column(
@@ -90,7 +90,7 @@ class HotelDesign extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: Image(
-                              width: 220,
+                              width: 350,
                               height: 180,
                               fit: BoxFit.cover,
                               image: AssetImage(hotel.imageUrl)),

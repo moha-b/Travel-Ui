@@ -46,7 +46,7 @@ class DestinationDesign extends StatelessWidget {
                                 dest: dest,
                               ))),
                   child: Container(
-                    margin: EdgeInsets.all(10),
+                    margin: EdgeInsets.all(5),
                     width: 210,
                     child: Stack(
                       alignment: Alignment.topCenter,
@@ -87,13 +87,16 @@ class DestinationDesign extends StatelessWidget {
                               ]),
                           child: Stack(
                             children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(20),
-                                child: Image(
-                                    width: 180,
-                                    height: 180,
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(dest.imageUrl)),
+                              Hero(
+                                tag: dest.imageUrl,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image(
+                                      width: 180,
+                                      height: 180,
+                                      fit: BoxFit.cover,
+                                      image: AssetImage(dest.imageUrl)),
+                                ),
                               ),
                               Positioned(
                                 bottom: 15,
@@ -106,7 +109,7 @@ class DestinationDesign extends StatelessWidget {
                                     Row(
                                       children: [
                                         Icon(
-                                          Icons.location_on_rounded,
+                                          Icons.location_on_outlined,
                                           color: Colors.white,
                                           size: 17,
                                         ),
