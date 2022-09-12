@@ -1,12 +1,11 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, file_names, camel_case_types, prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, unused_element, unused_import
 // ignore: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:travel/FrontEnd/DestinationDesign.dart';
-import 'package:travel/FrontEnd/HotelDesign.dart';
-import 'package:travel/Widgets/bigtext.dart';
-import 'package:travel/Widgets/smallText.dart';
 
-// ignore: camel_case_types
+import '../Widgets/widget_big_text.dart';
+import '../Widgets/widget_destination.dart';
+import '../Widgets/widget_hotel.dart';
+
 class homeScreen extends StatefulWidget {
   homeScreen({Key? key}) : super(key: key);
 
@@ -16,7 +15,7 @@ class homeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<homeScreen> {
   int _selectedIndex = 0;
-  int _currentTab = 0;
+  int _currentTab = 1;
 
   List<IconData> _icon = [
     Icons.place_outlined,
@@ -62,7 +61,7 @@ class _homeScreenState extends State<homeScreen> {
               padding: EdgeInsets.only(left: 20, right: 120, bottom: 20),
               child: BigText(
                 text: "What u would like to find",
-                size: 24,
+                size: 22,
               ),
             ),
             Row(
@@ -76,11 +75,11 @@ class _homeScreenState extends State<homeScreen> {
               height: 20,
             ),
             // <--------------------
-            DestinationDesign(),
+            DestinationSlider(),
             SizedBox(
               height: 20,
             ),
-            HotelDesign(),
+            HotelSlider(),
           ],
         ),
       ),
@@ -89,8 +88,6 @@ class _homeScreenState extends State<homeScreen> {
         onTap: (value) {
           setState(() {
             _currentTab = value;
-            print(value);
-            print(_currentTab);
           });
         },
         items: [

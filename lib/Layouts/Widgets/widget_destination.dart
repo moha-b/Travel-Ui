@@ -1,13 +1,13 @@
 // ignore_for_file: file_names, prefer_const_constructors, unnecessary_new, unused_local_variable, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:travel/FrontEnd/DestinationScreenDesign.dart';
-import 'package:travel/Widgets/bigtext.dart';
-import 'package:travel/Widgets/smallText.dart';
-import 'package:travel/backEnd/places.dart';
+import '../../Models/places.dart';
+import 'widget_big_text.dart';
+import 'widget_small_text.dart';
+import '../Pages/page_destination.dart';
 
-class DestinationDesign extends StatelessWidget {
-  const DestinationDesign({Key? key}) : super(key: key);
+class DestinationSlider extends StatelessWidget {
+  const DestinationSlider({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class DestinationDesign extends StatelessWidget {
             children: [
               BigText(text: "Top Destination"),
               GestureDetector(
-                onTap: () => print("see All"),
+                onTap: () {},
                 child: SmallText(
                   text: "See All",
                   size: 13,
@@ -37,7 +37,7 @@ class DestinationDesign extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: destinations.length,
               itemBuilder: (context, int index) {
-                places dest = destinations[index];
+                Places dest = destinations[index];
                 return GestureDetector(
                   onTap: () => Navigator.push(
                       context,

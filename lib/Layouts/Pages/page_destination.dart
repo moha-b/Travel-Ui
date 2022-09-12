@@ -1,14 +1,15 @@
 // ignore_for_file: file_names, prefer_const_constructors_in_immutables, must_be_immutable, prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_import, duplicate_ignore, unused_local_variable, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:travel/FrontEnd/DestinationDesign.dart';
-import 'package:travel/Widgets/bigtext.dart';
-import 'package:travel/Widgets/smallText.dart';
-import 'package:travel/backEnd/Activity.dart';
-import 'package:travel/backEnd/places.dart';
+
+
+import '../../Models/Activity.dart';
+import '../../Models/places.dart';
+import '../Widgets/widget_big_text.dart';
+import '../Widgets/widget_small_text.dart';
 
 class DestinationScreen extends StatefulWidget {
-  places dest;
+  Places dest;
 
   DestinationScreen({
     Key? key,
